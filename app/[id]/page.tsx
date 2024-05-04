@@ -61,14 +61,15 @@ export default function Home({ params }: any) {
 
   return (
     <div>
-      <h1>Token Transaction</h1>
-      <div>
+      <h1 className="text-3xl font-bold">Buy/Sell FT Clubs</h1>
+      <div className="p-4">
         <h2>Max $FRIEND Spend</h2>
         <input
           type="number"
           placeholder="Max In"
           defaultValue={Number(AMOUNT_IN) / 1e18}
           onChange={(e) => setMaxIn(BigInt(Number(e.target.value) * 1e18))}
+          className="placeholder-gray-500 bg-gray-800 text-white p-2 rounded-full w-full"
         />
       </div>
       <div>
@@ -78,6 +79,7 @@ export default function Home({ params }: any) {
           placeholder="Amount"
           defaultValue={amount}
           onChange={(e) => setAmount(parseInt(e.target.value))}
+          className="placeholder-gray-500 bg-gray-800 text-white p-2 rounded-full"
         />
         <button
           onClick={() => {
@@ -85,6 +87,7 @@ export default function Home({ params }: any) {
               return alert("Please enter Token ID and Amount");
             buyToken(amount);
           }}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
         >
           Buy
         </button>
@@ -95,6 +98,7 @@ export default function Home({ params }: any) {
           type="number"
           placeholder="Amount"
           onChange={(e) => setAmount(parseInt(e.target.value))}
+          className="placeholder-gray-500 bg-gray-800 text-white p-2 rounded-full"
         />
         <button
           onClick={() => {
@@ -102,6 +106,7 @@ export default function Home({ params }: any) {
               return alert("Please enter Token ID and Amount");
             sellToken(amount);
           }}
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
         >
           Sell
         </button>
