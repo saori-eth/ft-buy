@@ -19,7 +19,7 @@ export default function Home({ params }: any) {
   const [signer, setSigner] = useState<any>();
   const [contract, setContract] = useState<any>();
   const [receipt, setReceipt] = useState<any>();
-  const [amount, setAmount] = useState<number>();
+  const [amount, setAmount] = useState<number>(2);
   const [maxIn, setMaxIn] = useState<any>(AMOUNT_IN);
   useEffect(() => {
     console.log(window.ethereum);
@@ -76,6 +76,7 @@ export default function Home({ params }: any) {
         <input
           type="number"
           placeholder="Amount"
+          defaultValue={amount}
           onChange={(e) => setAmount(parseInt(e.target.value))}
         />
         <button
