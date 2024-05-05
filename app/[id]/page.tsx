@@ -12,14 +12,14 @@ const CLUBS_ADDRESS = "0x201e95f275F39a5890C976Dc8A3E1b4Af114E635";
 const REFERRAL_ADDRESS = "0x659b8aC78bf3428077529ef9E1cCa22B1d711FFD";
 
 // 1000e18 in big int
-const AMOUNT_IN = BigInt(1000 * 1e18);
+const AMOUNT_IN = BigInt(2000 * 1e18);
 
 export default function Home({ params }: any) {
   const { id } = params;
   const [signer, setSigner] = useState<any>();
   const [contract, setContract] = useState<any>();
   const [receipt, setReceipt] = useState<any>();
-  const [amount, setAmount] = useState<number>(2);
+  const [amount, setAmount] = useState<number>(3);
   const [maxIn, setMaxIn] = useState<any>(AMOUNT_IN);
   useEffect(() => {
     console.log(window.ethereum);
